@@ -63,7 +63,7 @@ public class VeiculoController {
 
 
 
-    @PostMapping("/api/veiculo")
+    @PostMapping
     @ApiResponses ({
         @ApiResponse(responseCode = "201", description = "Veiculo cadastrado com sucesso"),
         @ApiResponse(responseCode = "400", description = "Os campos enviados são inválidos")

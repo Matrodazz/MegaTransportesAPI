@@ -63,7 +63,7 @@ public class EmpresaController {
 
 
 
-    @PostMapping("/api/empresa")
+    @PostMapping
     @ApiResponses ({
         @ApiResponse(responseCode = "201", description = "Empresa cadastrada com sucesso"),
         @ApiResponse(responseCode = "400", description = "Os campos enviados são inválidos")

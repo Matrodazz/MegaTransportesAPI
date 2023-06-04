@@ -61,7 +61,7 @@ public class MonitoramentoController {
 
 
 
-    @PostMapping("/api/monitoramento")
+    @PostMapping
     @ApiResponses ({
         @ApiResponse(responseCode = "201", description = "Monitoramento cadastrado com sucesso"),
         @ApiResponse(responseCode = "400", description = "Os campos enviados são inválidos")

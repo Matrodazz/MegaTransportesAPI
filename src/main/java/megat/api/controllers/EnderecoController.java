@@ -63,7 +63,7 @@ public class EnderecoController {
 
 
 
-    @PostMapping("/api/endereco")
+    @PostMapping
     @ApiResponses ({
         @ApiResponse(responseCode = "201", description = "Endereco cadastrado com sucesso"),
         @ApiResponse(responseCode = "400", description = "Os campos enviados são inválidos")

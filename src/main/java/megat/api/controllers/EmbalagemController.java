@@ -64,7 +64,7 @@ public class EmbalagemController {
 
 
 
-    @PostMapping("/api/embalagem")
+    @PostMapping
     @ApiResponses ({
         @ApiResponse(responseCode = "201", description = "Embalagem cadastrada com sucesso"),
         @ApiResponse(responseCode = "400", description = "Os campos enviados são inválidos")

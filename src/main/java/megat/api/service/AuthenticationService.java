@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import megat.api.repositories.UsuarioRepository;
 
-
 @Service
 public class AuthenticationService implements UserDetailsService {
 
