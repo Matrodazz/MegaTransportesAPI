@@ -43,8 +43,8 @@ campo | tipo | obrigatório | descrição
 nome | String | sim | Informa o nome do alimento
 temperatura_minima | int | sim | Informa a temperatura mínima recomendada
 temperatura_maxima | int | sim | Informa a temperatura máxima recomendada
-umidade_minima | String | sim | Informa a % de umidade mínima recomendada
-umidade_maxima | String | sim | Informa  a % de umidade máxima recomendada
+umidade_minima | int | sim | Informa a % de umidade mínima recomendada
+umidade_maxima | int | sim | Informa  a % de umidade máxima recomendada
 
 **Exemplo de Campo de Requisição**
 
@@ -52,8 +52,8 @@ umidade_maxima | String | sim | Informa  a % de umidade máxima recomendada
     "nome": "Sorvete de morango",
     "temperatura_minima ": -18,
     "temperatura_maxima": -12,
-    "umidade_minima": "20%",
-    "umidade_maxima": "60%"
+    "umidade_minima": 20,
+    "umidade_maxima": 60
 ```
 
 **Código de Resposta**
@@ -74,8 +74,8 @@ código | descrição
     "nome": "Sorvete de morango",
     "temperatura_minima ": -18,
     "temperatura_maxima": -12,
-    "umidade_minima": "20%",
-    "umidade_maxima": "60%"
+    "umidade_minima": 20,
+    "umidade_maxima": 60
 ```
 
 ---
@@ -90,7 +90,7 @@ campo | tipo | obrigatório | descrição
 |---|---|:---:|---|
 logradouro | String | sim | Informa o nome do logradouro
 numero | int | sim | Informa o número do local
-cep | int | sim | Informa o número do cep
+cep | String | sim | Informa o número do cep
 bairro | String | sim | Informa o bairro
 cidade | String | sim | Informa a cidade
 estado | String | sim | Informa o estado
@@ -104,7 +104,7 @@ ponto_referencia | String | não | Informa um ponto de referencia
 ```js
     "logradouro": "Rua Conselheiro Moreira de Barros",
     "numero ": 105,
-    "cep": 48400000,
+    "cep": "48400-000",
     "bairro": "Santana",
     "cidade": "São Paulo",
     "estado": "São Paulo",
@@ -130,12 +130,12 @@ código | descrição
 ```js
     "logradouro": "Rua Conselheiro Moreira de Barros",
     "numero ": 105,
-    "cep": 48400000,
+    "cep": "48400-000",
     "bairro": "Santana",
     "cidade": "São Paulo",
     "estado": "São Paulo",
     "sigla_estado": "SP",
-    "regiao": "Grande São Paulo",
+    "regiao": "Sudeste",
     "ponto_referencia": null
 ```
 
@@ -150,7 +150,7 @@ código | descrição
 campo | tipo | obrigatório | descrição
 |---|---|:---:|---|
 temperatura | int | sim | Informa a temperatura atual
-umidade | String | sim | Informa a % de umidade atual
+umidade | int | sim | Informa a % de umidade atual
 latitude | String | sim | Informa a latitude atual
 longitude | String | sim | Informa o longitude atual
 dthr_monitoramento | LocalDateTime | sim | Informa a data e hora
@@ -160,7 +160,7 @@ dthr_monitoramento | LocalDateTime | sim | Informa a data e hora
 
 ```js
     "temperatura": 18,
-    "umidade ": "48%",
+    "umidade ": 48,
     "latitude": "23°33'01''",
     "longitude": "46°38'02''",
     "dthr_monitoramento": 2023-04-02-14-35-08
@@ -183,7 +183,7 @@ código | descrição
 
 ```js
     "temperatura": 18,
-    "umidade ": "48%",
+    "umidade ": 48,
     "latitude": "23°33'01''",
     "longitude": "46°38'02''",
     "dthr_monitoramento": 2023-04-02-14-35-08

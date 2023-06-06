@@ -37,7 +37,7 @@ public class Endereco {
     private int numero;
 
     @NotNull
-    private int cep;
+    private String cep;
 
     @NotNull
     private String bairro;

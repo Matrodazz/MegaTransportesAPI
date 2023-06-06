@@ -33,7 +33,7 @@ public class Monitoramento {
     private int temperatura;
 
     @NotNull
-    private String umidade;
+    private int umidade;
 
     @NotNull
     private String latitude;
