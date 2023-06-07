@@ -42,8 +42,6 @@ public class Veiculo {
     @NotNull
     private String capacidade;
 
-    @ManyToOne
-    private Viagem viagem;
    
     
     public EntityModel<Veiculo> toEntityModel(){

@@ -8,7 +8,9 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -27,16 +29,17 @@ import megat.api.controllers.MotoristaController;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name="T_MT_MOTORISTA")
-
+@Table(name = "T_MT_MOTORISTA")
 public class Motorista {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotNull
     private String nome;
 
-    @NotNull @Min(value = 0, message = "Deve ser positivo") 
+    @NotNull
+    @Min(value = 0, message = "Deve ser positivo")
     private int idade;
 
     @NotNull
@@ -45,17 +48,13 @@ public class Motorista {
     @NotNull
     private String statusContrato;
 
-    @OneToMany(mappedBy = "motorista")
-    private List<Endereco> enderecos;
-   
-    public EntityModel<Motorista> toEntityModel(){
+    public EntityModel<Motorista> toEntityModel() {
         return EntityModel.of(
-            this, 
-            linkTo(methodOn(MotoristaController.class).show(id)).withSelfRel(),
-            linkTo(methodOn(MotoristaController.class).destroy(id)).withRel("delete"),
-            linkTo(methodOn(MotoristaController.class).index(null, Pageable.unpaged())).withRel("all")
+                this,
+                linkTo(methodOn(MotoristaController.class).show(id)).withSelfRel(),
+                linkTo(methodOn(MotoristaController.class).destroy(id)).withRel("delete"),
+                linkTo(methodOn(MotoristaController.class).index(null, Pageable.unpaged())).withRel("all")
         );
-
     }
-
 }
+

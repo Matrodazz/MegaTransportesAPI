@@ -47,9 +47,7 @@ public class Monitoramento {
     @NotNull
     private LocalDateTime dthrMonitoramento;
 
-    @ManyToOne
-    private Viagem viagem;
-   
+  
     
     public EntityModel<Monitoramento> toEntityModel(){
         return EntityModel.of(

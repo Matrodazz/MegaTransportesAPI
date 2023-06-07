@@ -52,11 +52,7 @@ public class Empresa {
     private LocalDate dataEncerramento;
 
 
-    @OneToMany(mappedBy = "empresa")
-    private List<Endereco> enderecos;
-
-    @ManyToMany
-    private List<Alimento> alimentos;
+   
     
     public EntityModel<Empresa> toEntityModel(){
         return EntityModel.of(

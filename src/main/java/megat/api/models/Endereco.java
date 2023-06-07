@@ -13,7 +13,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -30,16 +29,17 @@ import megat.api.controllers.EnderecoController;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name="T_MT_ENDERECO")
-
+@Table(name = "T_MT_ENDERECO")
 public class Endereco {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotNull
     private String logradouro;
 
-    @NotNull @Min(value = 0, message = "Deve ser positivo") 
+    @NotNull
+    @Min(value = 0, message = "Deve ser positivo")
     private int numero;
 
     @NotNull
@@ -54,7 +54,9 @@ public class Endereco {
     @NotNull
     private String estado;
 
-    @NotNull @NotBlank @Size(min = 1, max = 3)
+    @NotNull
+    @NotBlank
+    @Size(min = 1, max = 3)
     private String siglaEstado;
 
     @NotNull
@@ -62,20 +64,12 @@ public class Endereco {
 
     private String pontoReferencia;
 
-    @ManyToOne
-    private Motorista motorista;
-
-    @ManyToMany(mappedBy = "enderecos")
-    private List<Empresa> empresas;
-    
-    public EntityModel<Endereco> toEntityModel(){
+    public EntityModel<Endereco> toEntityModel() {
         return EntityModel.of(
-            this, 
-            linkTo(methodOn(EnderecoController.class).show(id)).withSelfRel(),
-            linkTo(methodOn(EnderecoController.class).destroy(id)).withRel("delete"),
-            linkTo(methodOn(EnderecoController.class).index(null, Pageable.unpaged())).withRel("all")
+                this,
+                linkTo(methodOn(EnderecoController.class).show(id)).withSelfRel(),
+                linkTo(methodOn(EnderecoController.class).destroy(id)).withRel("delete"),
+                linkTo(methodOn(EnderecoController.class).index(null, Pageable.unpaged())).withRel("all")
         );
-
     }
-
 }

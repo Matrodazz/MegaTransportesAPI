@@ -48,11 +48,7 @@ public class Alimento {
     @NotNull
     private int umidadeMaxima;
 
-    @ManyToMany(mappedBy = "alimentos")
-    private List<Empresa> empresas;
-
-    @OneToOne(mappedBy = "alimento")
-    private Embalagem embalagem;
+    
     
     public EntityModel<Alimento> toEntityModel(){
         return EntityModel.of(

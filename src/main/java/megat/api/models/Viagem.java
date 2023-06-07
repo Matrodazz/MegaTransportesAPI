@@ -40,14 +40,7 @@ public class Viagem {
     @NotNull
     private LocalDateTime dthrChegada;
 
-    @OneToMany(mappedBy = "viagem")
-    private List<Embalagem> embalagens;
-
-    @ManyToMany
-    private List<Veiculo> veiculos;
-
-    @OneToMany(mappedBy = "viagem")
-    private List<Monitoramento> monitoramentos;
+   
     
     public EntityModel<Viagem> toEntityModel(){
         return EntityModel.of(
