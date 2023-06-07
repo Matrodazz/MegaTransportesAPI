@@ -6,10 +6,13 @@ import org.springframework.data.domain.Pageable;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
@@ -41,6 +44,9 @@ public class Motorista {
 
     @NotNull
     private String statusContrato;
+
+    @OneToMany(mappedBy = "motorista")
+    private List<Endereco> enderecos;
    
     public EntityModel<Motorista> toEntityModel(){
         return EntityModel.of(

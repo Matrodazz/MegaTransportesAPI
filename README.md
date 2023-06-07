@@ -14,6 +14,9 @@
     ```
 
 
+
+![Diagrama de Classes](https://i.imgur.com/psPByxB.png)
+
 ## Endpoints
 
 * Alimento

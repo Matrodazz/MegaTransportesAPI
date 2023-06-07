@@ -7,11 +7,14 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -36,6 +39,15 @@ public class Viagem {
     
     @NotNull
     private LocalDateTime dthrChegada;
+
+    @OneToMany(mappedBy = "viagem")
+    private List<Embalagem> embalagens;
+
+    @ManyToMany
+    private List<Veiculo> veiculos;
+
+    @OneToMany(mappedBy = "viagem")
+    private List<Monitoramento> monitoramentos;
     
     public EntityModel<Viagem> toEntityModel(){
         return EntityModel.of(

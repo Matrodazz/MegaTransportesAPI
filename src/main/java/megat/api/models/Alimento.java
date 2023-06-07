@@ -6,10 +6,14 @@ import org.springframework.data.domain.Pageable;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -43,6 +47,12 @@ public class Alimento {
 
     @NotNull
     private int umidadeMaxima;
+
+    @ManyToMany(mappedBy = "alimentos")
+    private List<Empresa> empresas;
+
+    @OneToOne(mappedBy = "alimento")
+    private Embalagem embalagem;
     
     public EntityModel<Alimento> toEntityModel(){
         return EntityModel.of(

@@ -10,6 +10,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -40,6 +41,9 @@ public class Veiculo {
 
     @NotNull
     private String capacidade;
+
+    @ManyToOne
+    private Viagem viagem;
    
     
     public EntityModel<Veiculo> toEntityModel(){

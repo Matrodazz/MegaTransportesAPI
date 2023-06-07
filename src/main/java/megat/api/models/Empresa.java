@@ -7,11 +7,14 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -49,6 +52,11 @@ public class Empresa {
     private LocalDate dataEncerramento;
 
 
+    @OneToMany(mappedBy = "empresa")
+    private List<Endereco> enderecos;
+
+    @ManyToMany
+    private List<Alimento> alimentos;
     
     public EntityModel<Empresa> toEntityModel(){
         return EntityModel.of(

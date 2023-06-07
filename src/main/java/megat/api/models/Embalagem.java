@@ -10,6 +10,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -35,6 +36,9 @@ public class Embalagem {
     private String tipo;
 
     private String material;
+
+    @OneToOne
+    private Alimento alimento;
    
     
     public EntityModel<Embalagem> toEntityModel(){
