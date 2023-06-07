@@ -12,6 +12,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -24,6 +25,7 @@ import megat.api.controllers.EmpresaController;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Table(name="T_MT_EMPRESA")
 
 public class Empresa {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)

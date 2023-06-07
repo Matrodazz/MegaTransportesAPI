@@ -10,6 +10,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -25,6 +26,7 @@ import megat.api.controllers.EnderecoController;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Table(name="T_MT_ENDERECO")
 
 public class Endereco {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)

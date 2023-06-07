@@ -30,6 +30,23 @@
     * Excluir 
     * Listar todos
 
+* Embalagem
+    * Cadastrar
+    * Atualizar 
+    * Excluir 
+    * Listar todos
+
+* Motorista
+    * Cadastrar
+    * Atualizar 
+    * Excluir 
+    * Listar todos
+
+* Empresa
+    * Cadastrar
+    * Atualizar 
+    * Excluir 
+    * Listar todos
 ---
 
 ### Cadastrar Alimento
@@ -274,6 +291,146 @@ código | descrição
     "marca": "Mercedes-Benz",
     "placa": "DCG6B67",
     "capacidade": 5000
+```
+
+---
+
+### Cadastrar Embalagem
+
+`POST` /api/embalagem
+
+**Campo de Requisição**
+
+campo | tipo | obrigatório | descrição
+|---|---|:---:|---|
+capacidade_embalagem | String | sim | Informa a capacidade da emabalgem
+tipo | String | não | Informa o tipo de embalagem
+material | String | não | Informa o material da embalagem
+
+
+**Exemplo de Campo de Requisição**
+
+```js
+    "capacidade_embalagem": 200.00,
+    "tipo": "Tetra Pak",
+    "material": "Papelão"
+```
+
+**Código de Resposta**
+
+código | descrição
+|---|---
+200 | Ok
+201 | Embalagem cadastrado com sucesso
+400 | Campos enviados são inválidos
+
+---
+
+### Mostrar Embalagem
+
+`GET` /api/embalagem/{id}
+
+```js
+    "capacidade_embalagem": 200.00,
+    "tipo": "Tetra Pak",
+    "material": "Papelão"
+```
+
+---
+
+
+### Cadastrar Motorista
+
+`POST` /api/motorista
+
+**Campo de Requisição**
+
+campo | tipo | obrigatório | descrição
+|---|---|:---:|---|
+nome | String | sim | Informa o nome do motorista
+idade | int | sim | Informa a idade do motorista
+cpf | String | sim | Informa o cpf do motorista
+status_contrato | String | sim | Informa status atual do contrato do motorista
+
+
+**Exemplo de Campo de Requisição**
+
+```js
+    "nome": "Gilberto",
+    "idade": 38,
+    "cpf": "555.555.555-55",
+    "status_contrato": "Ativo"
+```
+
+**Código de Resposta**
+
+código | descrição
+|---|---
+200 | Ok
+201 | Motorista cadastrado com sucesso
+400 | Campos enviados são inválidos
+
+---
+
+### Mostrar Motorista
+
+`GET` /api/motorista/{id}
+
+```js
+    "nome": "Gilberto",
+    "idade": 38,
+    "cpf": "555.555.555-55",
+    "status_contrato": "Ativo"
+```
+
+---
+
+
+### Cadastrar Empresa
+
+`POST` /api/empresa
+
+**Campo de Requisição**
+
+campo | tipo | obrigatório | descrição
+|---|---|:---:|---|
+nome | String | sim | Informa o nome do motorista
+idade | int | sim | Informa a idade do motorista
+cpf | String | sim | Informa o cpf do motorista
+data_inclusão | String | sim | Informa a data de entrada da empresa
+data_encerramento | String | não | Informa a data de saída da empresa
+
+
+**Exemplo de Campo de Requisição**
+
+```js
+    "nome": "Gilberto",
+    "idade": 38,
+    "cpf": "555.555.555-55",
+    "status_contrato": "Ativo"
+```
+
+**Código de Resposta**
+
+código | descrição
+|---|---
+200 | Ok
+201 | Empresa cadastrada com sucesso
+400 | Campos enviados são inválidos
+
+---
+
+### Mostrar Empresa
+
+`GET` /api/empresa/{id}
+
+```js
+    "cnpj": "00.399.214/0001-82",
+    "razao_social": "Stampda comércios LTDA.",
+    "nome": "555.555.555-55",
+    "status_atividade": "Ativo",
+    "data_inclusão": ,
+    "data_encerramento": null
 ```
 
 ---
