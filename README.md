@@ -1,3 +1,19 @@
+## Instalação
+
+1. Clone o repositório:
+
+   ```shell
+   git clone https://github.com/Matrodazz/MegaTransportesAPI/tree/main
+   ```
+
+
+2. Instale as dependências:
+
+    ```shell
+    npm install
+    ```
+
+
 ## Endpoints
 
 * Alimento
@@ -58,19 +74,19 @@
 campo | tipo | obrigatório | descrição
 |---|---|:---:|---|
 nome | String | sim | Informa o nome do alimento
-temperatura_minima | int | sim | Informa a temperatura mínima recomendada
-temperatura_maxima | int | sim | Informa a temperatura máxima recomendada
-umidade_minima | int | sim | Informa a % de umidade mínima recomendada
-umidade_maxima | int | sim | Informa  a % de umidade máxima recomendada
+temperaturaMinima | int | sim | Informa a temperatura mínima recomendada
+temperaturaMaxima | int | sim | Informa a temperatura máxima recomendada
+umidadeMinima | int | sim | Informa a % de umidade mínima recomendada
+umidadeMaxima | int | sim | Informa  a % de umidade máxima recomendada
 
 **Exemplo de Campo de Requisição**
 
 ```js
     "nome": "Sorvete de morango",
-    "temperatura_minima ": -18,
-    "temperatura_maxima": -12,
-    "umidade_minima": 20,
-    "umidade_maxima": 60
+    "temperaturaMinima ": -18,
+    "temperaturaMaxima": -12,
+    "umidadeMinima": 20,
+    "umidadeMaxima": 60
 ```
 
 **Código de Resposta**
@@ -89,10 +105,10 @@ código | descrição
 
 ```js
     "nome": "Sorvete de morango",
-    "temperatura_minima ": -18,
-    "temperatura_maxima": -12,
-    "umidade_minima": 20,
-    "umidade_maxima": 60
+    "temperaturaMinima ": -18,
+    "temperaturaMaxima": -12,
+    "umidadeMinima": 20,
+    "umidadeMaxima": 60
 ```
 
 ---
@@ -111,9 +127,9 @@ cep | String | sim | Informa o número do cep
 bairro | String | sim | Informa o bairro
 cidade | String | sim | Informa a cidade
 estado | String | sim | Informa o estado
-sigla_estado | String | sim | Informa a sigla do estado
+siglaEstado | String | sim | Informa a sigla do estado
 regiao | String | sim | Informa a região
-ponto_referencia | String | não | Informa um ponto de referencia
+pontoReferencia | String | não | Informa um ponto de referencia
 
 
 **Exemplo de Campo de Requisição**
@@ -125,9 +141,9 @@ ponto_referencia | String | não | Informa um ponto de referencia
     "bairro": "Santana",
     "cidade": "São Paulo",
     "estado": "São Paulo",
-    "sigla_estado": "SP",
+    "siglaEstado": "SP",
     "regiao": "Grande São Paulo",
-    "ponto_referencia": null
+    "pontoReferencia": null
 ```
 
 **Código de Resposta**
@@ -151,9 +167,9 @@ código | descrição
     "bairro": "Santana",
     "cidade": "São Paulo",
     "estado": "São Paulo",
-    "sigla_estado": "SP",
+    "siglaEstado": "SP",
     "regiao": "Sudeste",
-    "ponto_referencia": null
+    "pontoReferencia": null
 ```
 
 ---
@@ -170,7 +186,7 @@ temperatura | int | sim | Informa a temperatura atual
 umidade | int | sim | Informa a % de umidade atual
 latitude | String | sim | Informa a latitude atual
 longitude | String | sim | Informa o longitude atual
-dthr_monitoramento | LocalDateTime | sim | Informa a data e hora
+dthrMonitoramento | LocalDateTime | sim | Informa a data e hora
 
 
 **Exemplo de Campo de Requisição**
@@ -180,7 +196,7 @@ dthr_monitoramento | LocalDateTime | sim | Informa a data e hora
     "umidade ": 48,
     "latitude": "23°33'01''",
     "longitude": "46°38'02''",
-    "dthr_monitoramento": 2023-04-02-14-35-08
+    "dthrMonitoramento": 2023-04-02-14-35-08
   
 ```
 
@@ -203,7 +219,7 @@ código | descrição
     "umidade ": 48,
     "latitude": "23°33'01''",
     "longitude": "46°38'02''",
-    "dthr_monitoramento": 2023-04-02-14-35-08
+    "dthrMonitoramento": 2023-04-02-14-35-08
   
 ```
 
@@ -217,15 +233,15 @@ código | descrição
 
 campo | tipo | obrigatório | descrição
 |---|---|:---:|---|
-dthr_partida | LocalDateTime | sim | Informa a data e hora de partida
-dthr_chegada | LocalDateTime | sim | Informa a data e hora de chegada
+dthrPartida | LocalDateTime | sim | Informa a data e hora de partida
+dthrChegada | LocalDateTime | sim | Informa a data e hora de chegada
 
 
 **Exemplo de Campo de Requisição**
 
 ```js
-    "dthr_partida": 2023-04-02-14-35-08,
-    "dthr_chegada": 2023-05-02-18-42-35
+    "dthrPartida": 2023-04-02-14-35-08,
+    "dthrChegada": 2023-05-02-18-42-35
 ```
 
 **Código de Resposta**
@@ -243,8 +259,8 @@ código | descrição
 `GET` /api/viagem/{id}
 
 ```js
-    "dthr_partida": 2023-04-02-14-35-08,
-    "dthr_chegada": 2023-05-02-18-42-35
+    "dthrPartida": 2023-04-02-14-35-08,
+    "dthrChegada": 2023-05-02-18-42-35
 ```
 
 ---
@@ -303,7 +319,7 @@ código | descrição
 
 campo | tipo | obrigatório | descrição
 |---|---|:---:|---|
-capacidade_embalagem | String | sim | Informa a capacidade da emabalgem
+capacidadeEmbalagem | String | sim | Informa a capacidade da emabalgem
 tipo | String | não | Informa o tipo de embalagem
 material | String | não | Informa o material da embalagem
 
@@ -311,7 +327,7 @@ material | String | não | Informa o material da embalagem
 **Exemplo de Campo de Requisição**
 
 ```js
-    "capacidade_embalagem": 200.00,
+    "capacidadeEmbalagem": 200.00,
     "tipo": "Tetra Pak",
     "material": "Papelão"
 ```
@@ -331,7 +347,7 @@ código | descrição
 `GET` /api/embalagem/{id}
 
 ```js
-    "capacidade_embalagem": 200.00,
+    "capacidadeEmbalagem": 200.00,
     "tipo": "Tetra Pak",
     "material": "Papelão"
 ```
@@ -350,7 +366,7 @@ campo | tipo | obrigatório | descrição
 nome | String | sim | Informa o nome do motorista
 idade | int | sim | Informa a idade do motorista
 cpf | String | sim | Informa o cpf do motorista
-status_contrato | String | sim | Informa status atual do contrato do motorista
+statusContrato | String | sim | Informa status atual do contrato do motorista
 
 
 **Exemplo de Campo de Requisição**
@@ -359,7 +375,7 @@ status_contrato | String | sim | Informa status atual do contrato do motorista
     "nome": "Gilberto",
     "idade": 38,
     "cpf": "555.555.555-55",
-    "status_contrato": "Ativo"
+    "statusContrato": "Ativo"
 ```
 
 **Código de Resposta**
@@ -380,7 +396,7 @@ código | descrição
     "nome": "Gilberto",
     "idade": 38,
     "cpf": "555.555.555-55",
-    "status_contrato": "Ativo"
+    "statusContrato": "Ativo"
 ```
 
 ---
@@ -394,20 +410,23 @@ código | descrição
 
 campo | tipo | obrigatório | descrição
 |---|---|:---:|---|
-nome | String | sim | Informa o nome do motorista
-idade | int | sim | Informa a idade do motorista
-cpf | String | sim | Informa o cpf do motorista
-data_inclusão | String | sim | Informa a data de entrada da empresa
-data_encerramento | String | não | Informa a data de saída da empresa
+cnpj | String | sim | Informa o cnpj completo da empresa
+razaoSocial | String | sim | Informa a razão social da empresa
+nome | String | sim | Informa o nome da empresa
+statusAtividade | String | sim | Informa o status de atividade da empresa
+dataInclusão | LocalDate | sim | Informa a data de entrada da empresa
+dataEncerramento | LocalDate | não | Informa a data de saída da empresa
 
 
 **Exemplo de Campo de Requisição**
 
 ```js
-    "nome": "Gilberto",
-    "idade": 38,
-    "cpf": "555.555.555-55",
-    "status_contrato": "Ativo"
+    "cnpj": "00.399.214/0001-82",
+    "razaoSocial": "Stampda comércios LTDA.",
+    "nome": "Stamp Alimentos",
+    "statusAtividade": "Ativo",
+    "dataInclusão": 2023-04-10,
+    "dataEncerramento": null
 ```
 
 **Código de Resposta**
@@ -426,11 +445,11 @@ código | descrição
 
 ```js
     "cnpj": "00.399.214/0001-82",
-    "razao_social": "Stampda comércios LTDA.",
-    "nome": "555.555.555-55",
-    "status_atividade": "Ativo",
-    "data_inclusão": ,
-    "data_encerramento": null
+    "razaoSocial": "Stampda comércios LTDA.",
+    "nome": "Stamp Alimentos",
+    "statusAtividade": "Ativo",
+    "dataInclusão": 2023-04-10,
+    "dataEncerramento": null
 ```
 
 ---

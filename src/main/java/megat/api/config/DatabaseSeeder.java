@@ -47,7 +47,7 @@ public class DatabaseSeeder implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         alimentoRepository.saveAll(List.of(
-            Alimento.builder().nome("Sorvete de morango").temperatura_minima(-18).temperatura_maxima(-12).umidade_minima(20).umidade_maxima(40).build()
+            Alimento.builder().nome("Morango").temperaturaMinima(-18).temperaturaMaxima(-12).umidadeMinima(20).umidadeMaxima(40).build()
         ));
 
         veiculoRepository.saveAll(List.of(
@@ -57,8 +57,8 @@ public class DatabaseSeeder implements CommandLineRunner {
         LocalDateTime now = LocalDateTime.now();
 
         Viagem viagem1 = Viagem.builder()
-            .dthr_partida(now)
-            .dthr_chegada(now)
+            .dthrPartida(now)
+            .dthrChegada(now)
             .build();
 
         viagemRepository.saveAll(List.of(viagem1));
@@ -69,7 +69,7 @@ public class DatabaseSeeder implements CommandLineRunner {
             .umidade(45)
             .latitude("23°33'01''")
             .longitude("46°38'02''")
-            .dthr_monitoramento(now)
+            .dthrMonitoramento(now)
             .build();
 
         monitoramentoRepository.saveAll(List.of(monitoramento1));

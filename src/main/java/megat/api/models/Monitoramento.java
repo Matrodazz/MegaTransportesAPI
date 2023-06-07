@@ -44,7 +44,7 @@ public class Monitoramento {
     private String longitude;
 
     @NotNull
-    private LocalDateTime dthr_monitoramento;
+    private LocalDateTime dthrMonitoramento;
    
     
     public EntityModel<Monitoramento> toEntityModel(){

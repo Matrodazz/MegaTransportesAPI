@@ -30,7 +30,7 @@ public class Embalagem {
     private Long id;
 
     @NotNull
-    private Double capacidade_embalagem;
+    private Double capacidadeEmbalagem;
 
     private String tipo;
 

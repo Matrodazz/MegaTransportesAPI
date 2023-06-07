@@ -35,18 +35,18 @@ public class Empresa {
     private String cnpj;
     
     @NotNull
-    private String razao_social;
+    private String razaoSocial;
 
     @NotNull
     private String nome;
 
     @NotNull
-    private String status_atividade;
+    private String statusAtividade;
 
     @NotNull
-    private LocalDate data_inclusao;
+    private LocalDate dataInclusao;
 
-    private LocalDate data_encerramento;
+    private LocalDate dataEncerramento;
 
 
     

@@ -33,16 +33,16 @@ public class Alimento {
     private String nome;
 
     @NotNull
-    private int temperatura_minima;
+    private int temperaturaMinima;
 
     @NotNull
-    private int temperatura_maxima;
+    private int temperaturaMaxima;
 
     @NotNull
-    private int umidade_minima;
+    private int umidadeMinima;
 
     @NotNull
-    private int umidade_maxima;
+    private int umidadeMaxima;
     
     public EntityModel<Alimento> toEntityModel(){
         return EntityModel.of(

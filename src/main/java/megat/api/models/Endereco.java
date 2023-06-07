@@ -51,12 +51,12 @@ public class Endereco {
     private String estado;
 
     @NotNull @NotBlank @Size(min = 1, max = 3)
-    private String sigla_estado;
+    private String siglaEstado;
 
     @NotNull
     private String regiao;
 
-    private String ponto_referencia;
+    private String pontoReferencia;
     
     public EntityModel<Endereco> toEntityModel(){
         return EntityModel.of(

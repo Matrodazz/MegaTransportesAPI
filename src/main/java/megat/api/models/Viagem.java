@@ -32,10 +32,10 @@ public class Viagem {
     private Long id;
 
     @NotNull
-    private LocalDateTime dthr_partida;
+    private LocalDateTime dthrPartida;
     
     @NotNull
-    private LocalDateTime dthr_chegada;
+    private LocalDateTime dthrChegada;
     
     public EntityModel<Viagem> toEntityModel(){
         return EntityModel.of(

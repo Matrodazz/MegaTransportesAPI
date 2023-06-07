@@ -40,7 +40,7 @@ public class Motorista {
     private String cpf;
 
     @NotNull
-    private String status_contrato;
+    private String statusContrato;
    
     public EntityModel<Motorista> toEntityModel(){
         return EntityModel.of(
