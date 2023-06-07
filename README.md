@@ -88,7 +88,7 @@ umidadeMaxima | int | sim | Informa  a % de umidade máxima recomendada
 **Exemplo de Campo de Requisição**
 
 ```js
-    "nome": "Sorvete de morango",
+    "nome": "Morango",
     "temperaturaMinima ": -18,
     "temperaturaMaxima": -12,
     "umidadeMinima": 20,
@@ -110,7 +110,7 @@ código | descrição
 `GET` /api/alimento/{id}
 
 ```js
-    "nome": "Sorvete de morango",
+    "nome": "Morango",
     "temperaturaMinima ": -18,
     "temperaturaMaxima": -12,
     "umidadeMinima": 20,
